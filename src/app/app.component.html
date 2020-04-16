@@ -1,0 +1,13 @@
+<div class="container">
+<input class="form-control" type="text" [formControl]="search">
+
+<ul>
+  <li *ngFor="let item of repositories$ | async" class="list-group-item">
+    <img *ngIf="item.owner as owner" [src]="owner.avatarUrl" alt="">
+    <div>
+      <b>{{item.name}}</b>
+      <p>URL: <a [href]="item.htmlUrl">{{item.htmlUrl}}</a></p>
+    </div>
+  </li>
+</ul>
+</div>
